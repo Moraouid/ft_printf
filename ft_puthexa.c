@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 02:30:05 by sel-abbo          #+#    #+#             */
-/*   Updated: 2024/11/22 02:00:45 by sel-abbo         ###   ########.fr       */
+/*   Created: 2024/11/21 18:03:34 by sel-abbo          #+#    #+#             */
+/*   Updated: 2024/11/22 01:21:37 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putnbr(int nbr)
+int ft_puthexa(unsigned long nbr, int check)
 {
-	unsigned int	nb;
-	int	count;
+    int count;
+    char *hex_lower;
+    char *hex_upper;
 
+    hex_lower = "0123456789abcdef";
+    hex_upper = "0123456789ABCDEF";
 	count = 0;
-	nb = nbr;
-	if (nbr < 0)
+	if (nbr < 16)
 	{
-		count += ft_putchar('-');
-		nb *= -1;
-	}
-	if (nb < 10)
-	{
-		count += ft_putchar(nb + 48);
+        if (check == 1)
+		    count += ft_putchar(hex_lower[nbr]);
+        if (check == 0)
+            count += ft_putchar(hex_upper[nbr]);
 	}
 	else
 	{
-		count += ft_putnbr(nb / 10);
-		count += ft_putnbr(nb % 10);
+		count += ft_puthexa(nbr / 16, check);
+		count += ft_puthexa(nbr % 16, check);
 	}
 	return (count);
 }
+

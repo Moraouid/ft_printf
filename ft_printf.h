@@ -6,7 +6,7 @@
 /*   By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 01:16:37 by sel-abbo          #+#    #+#             */
-/*   Updated: 2024/11/21 04:06:27 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2024/11/22 01:23:03 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int ft_putnbr(int nbr);
+int ft_putnbr_unsigned(unsigned int nbr);
+int ft_puthexa(unsigned long nbr, int check);
 
 #endif

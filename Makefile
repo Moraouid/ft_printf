@@ -6,7 +6,7 @@
 #    By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/21 00:57:03 by sel-abbo          #+#    #+#              #
-#    Updated: 2024/11/21 04:05:20 by sel-abbo         ###   ########.fr        #
+#    Updated: 2024/11/21 19:05:19 by sel-abbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS = -Wall -Wextra -Werror
 ARCH = ar rcs
 RM = rm -f
 
-FILES = ft_printf.c ft_putchar.c  ft_putnbr.c  ft_putstr.c
+FILES = ft_printf.c ft_putchar.c  ft_putnbr.c  ft_putstr.c ft_putnbr_unsigned.c ft_puthexa.c
 
 OB = ${FILES:.c=.o}
 

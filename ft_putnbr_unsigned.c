@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 02:30:05 by sel-abbo          #+#    #+#             */
-/*   Updated: 2024/11/22 02:00:45 by sel-abbo         ###   ########.fr       */
+/*   Created: 2024/11/21 17:15:34 by sel-abbo          #+#    #+#             */
+/*   Updated: 2024/11/21 17:21:41 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putnbr(int nbr)
+int ft_putnbr_unsigned(unsigned int nbr)
 {
-	unsigned int	nb;
 	int	count;
 
 	count = 0;
-	nb = nbr;
-	if (nbr < 0)
+	if (nbr < 10)
 	{
-		count += ft_putchar('-');
-		nb *= -1;
-	}
-	if (nb < 10)
-	{
-		count += ft_putchar(nb + 48);
+		count += ft_putchar(nbr + 48);
 	}
 	else
 	{
-		count += ft_putnbr(nb / 10);
-		count += ft_putnbr(nb % 10);
+		count += ft_putnbr_unsigned(nbr / 10);
+		count += ft_putnbr_unsigned(nbr % 10);
 	}
 	return (count);
 }
