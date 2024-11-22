@@ -6,13 +6,13 @@
 /*   By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:15:34 by sel-abbo          #+#    #+#             */
-/*   Updated: 2024/11/21 17:21:41 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:21:28 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putnbr_unsigned(unsigned int nbr)
+int	ft_putnbr_unsigned(unsigned int nbr)
 {
 	int	count;
 

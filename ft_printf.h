@@ -6,21 +6,22 @@
 /*   By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 01:16:37 by sel-abbo          #+#    #+#             */
-/*   Updated: 2024/11/22 01:23:03 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:18:17 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdio.h>
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdio.h>
 
+int	ft_printf(const char *frmt, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
-int ft_putnbr(int nbr);
-int ft_putnbr_unsigned(unsigned int nbr);
-int ft_puthexa(unsigned long nbr, int check);
+int	ft_putnbr(int nbr);
+int	ft_putnbr_unsigned(unsigned int nbr);
+int	ft_puthexa(unsigned long nbr, int check);
 
 #endif

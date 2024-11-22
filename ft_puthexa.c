@@ -6,27 +6,27 @@
 /*   By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 18:03:34 by sel-abbo          #+#    #+#             */
-/*   Updated: 2024/11/22 01:21:37 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:23:12 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_puthexa(unsigned long nbr, int check)
+int	ft_puthexa(unsigned long nbr, int check)
 {
-    int count;
-    char *hex_lower;
-    char *hex_upper;
+	int		count;
+	char	*hex_lower;
+	char	*hex_upper;
 
-    hex_lower = "0123456789abcdef";
-    hex_upper = "0123456789ABCDEF";
+	hex_lower = "0123456789abcdef";
+	hex_upper = "0123456789ABCDEF";
 	count = 0;
 	if (nbr < 16)
 	{
-        if (check == 1)
-		    count += ft_putchar(hex_lower[nbr]);
-        if (check == 0)
-            count += ft_putchar(hex_upper[nbr]);
+		if (check == 1)
+			count += ft_putchar(hex_lower[nbr]);
+		if (check == 0)
+			count += ft_putchar(hex_upper[nbr]);
 	}
 	else
 	{
@@ -35,4 +35,3 @@ int ft_puthexa(unsigned long nbr, int check)
 	}
 	return (count);
 }
-

@@ -6,16 +6,16 @@
 /*   By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 02:30:05 by sel-abbo          #+#    #+#             */
-/*   Updated: 2024/11/22 02:00:45 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:19:14 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putnbr(int nbr)
+int	ft_putnbr(int nbr)
 {
 	unsigned int	nb;
-	int	count;
+	int				count;
 
 	count = 0;
 	nb = nbr;

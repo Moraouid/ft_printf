@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-abbo <sel-abbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 17:31:15 by sel-abbo          #+#    #+#             */
-/*   Updated: 2024/11/22 16:55:56 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:16:41 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static	int	ft_format(va_list args, const char *frmt)
 {
-	int	count;
-	void *ptr;
+	int		count;
+	void	*ptr;
 
 	count = 0;
 	if (*frmt == 'c')
@@ -31,23 +31,23 @@ static	int	ft_format(va_list args, const char *frmt)
 	else if (*frmt == 'X')
 		count += ft_puthexa(va_arg(args, unsigned int), 0);
 	else if (*frmt == 'p')
-		{
-			ptr = va_arg(args, void *);
-			if (ptr == NULL)
-				return (count += ft_putstr("(nil)"), count);
-			count += ft_putstr("0x");
-			count += ft_puthexa((unsigned long)ptr, 1);
-		}
+	{
+		ptr = va_arg(args, void *);
+		if (ptr == NULL)
+			return (count += ft_putstr("(nil)"), count);
+		count += ft_putstr("0x");
+		count += ft_puthexa((unsigned long)ptr, 1);
+	}
 	return (count);
 }
 
 int	ft_printf(const char *frmt, ...)
 {
 	va_list	args;
-	int	count;
+	int		count;
+
 	va_start(args, frmt);
 	count = 0;
-	
 	if (!frmt)
 		return (-1);
 	while (*frmt)
@@ -65,7 +65,7 @@ int	ft_printf(const char *frmt, ...)
 		frmt++;
 	}
 	va_end(args);
-	return count;
+	return (count);
 }
 
 // int main()
@@ -113,3 +113,7 @@ int	ft_printf(const char *frmt, ...)
 // printf("%s\n", long_string);
 // printf("Nested: %s\n", "Check %x, %d");
 // }
+/* int main()
+{
+	printf("%d\n", printf(NULL));
+} */
