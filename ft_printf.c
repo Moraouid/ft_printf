@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-abbo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-abbo <sel-abbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 17:31:15 by sel-abbo          #+#    #+#             */
-/*   Updated: 2024/11/22 02:23:46 by sel-abbo         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:55:56 by sel-abbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	ft_printf(const char *frmt, ...)
 	va_start(args, frmt);
 	count = 0;
 	
+	if (!frmt)
+		return (-1);
 	while (*frmt)
 	{
 		if (*frmt == '%' && *(frmt + 1))
@@ -66,48 +68,48 @@ int	ft_printf(const char *frmt, ...)
 	return count;
 }
 
-int main()
-{
-	int x = 42;
-	char *long_string = "This is a very long string...";
+// int main()
+// {
+// 	int x = 42;
+// 	char *long_string = "This is a very long string...";
 
-freopen("ft_output.txt", "w", stdout);
-ft_printf("Integer: %d\n", 42);
-ft_printf("Negative integer: %d\n", -42);
-ft_printf("Integer with i: %i\n", 0);
-ft_printf("Unsigned: %u\n", 12345);
-ft_printf("Max unsigned: %u\n", 4294967295U);
-ft_printf("Hexadecimal (lower): %x\n", 255);
-ft_printf("Hexadecimal (zero): %x\n", 0);
-ft_printf("Hexadecimal (upper): %X\n", 255);
-ft_printf("Pointer test: %p\n", &x);
-ft_printf("Null pointer: %p\n", NULL);
-ft_printf("Percent: %%\n");
-ft_printf("Mix: %d, %s, %x, %c\n", 42, "Test", 255, 'Z');
-ft_printf("Empty string: '%s'\n", "");
-ft_printf("Zero: %d\n", 0);
-ft_printf("Large int: %d\n", 2147483647);
-ft_printf("Large unsigned: %u\n", 4294967295U);
-ft_printf("%s\n", long_string);
-ft_printf("Nested: %s\n", "Check %x, %d");
+// freopen("ft_output.txt", "w", stdout);
+// ft_printf("Integer: %d\n", 42);
+// ft_printf("Negative integer: %d\n", -42);
+// ft_printf("Integer with i: %i\n", 0);
+// ft_printf("Unsigned: %u\n", 12345);
+// ft_printf("Max unsigned: %u\n", 4294967295U);
+// ft_printf("Hexadecimal (lower): %x\n", 255);
+// ft_printf("Hexadecimal (zero): %x\n", 0);
+// ft_printf("Hexadecimal (upper): %X\n", 255);
+// ft_printf("Pointer test: %p\n", &x);
+// ft_printf("Null pointer: %p\n", NULL);
+// ft_printf("Percent: %%\n");
+// ft_printf("Mix: %d, %s, %x, %c\n", 42, "Test", 255, 'Z');
+// ft_printf("Empty string: '%s'\n", "");
+// ft_printf("Zero: %d\n", 0);
+// ft_printf("Large int: %d\n", 2147483647);
+// ft_printf("Large unsigned: %u\n", 4294967295U);
+// ft_printf("%s\n", long_string);
+// ft_printf("Nested: %s\n", "Check %x, %d");
 
-freopen("std_output.txt", "w", stdout);
-printf("Integer: %d\n", 42);
-printf("Negative integer: %d\n", -42);
-printf("Integer with i: %i\n", 0);
-printf("Unsigned: %u\n", 12345);
-printf("Max unsigned: %u\n", 4294967295U);
-printf("Hexadecimal (lower): %x\n", 255);
-printf("Hexadecimal (zero): %x\n", 0);
-printf("Hexadecimal (upper): %X\n", 255);
-printf("Pointer test: %p\n", &x);
-printf("Null pointer: %p\n", NULL);
-printf("Percent: %%\n");
-printf("Mix: %d, %s, %x, %c\n", 42, "Test", 255, 'Z');
-printf("Empty string: '%s'\n", "");
-printf("Zero: %d\n", 0);
-printf("Large int: %d\n", 2147483647);
-printf("Large unsigned: %u\n", 4294967295U);
-printf("%s\n", long_string);
-printf("Nested: %s\n", "Check %x, %d");
-}
+// freopen("std_output.txt", "w", stdout);
+// printf("Integer: %d\n", 42);
+// printf("Negative integer: %d\n", -42);
+// printf("Integer with i: %i\n", 0);
+// printf("Unsigned: %u\n", 12345);
+// printf("Max unsigned: %u\n", 4294967295U);
+// printf("Hexadecimal (lower): %x\n", 255);
+// printf("Hexadecimal (zero): %x\n", 0);
+// printf("Hexadecimal (upper): %X\n", 255);
+// printf("Pointer test: %p\n", &x);
+// printf("Null pointer: %p\n", NULL);
+// printf("Percent: %%\n");
+// printf("Mix: %d, %s, %x, %c\n", 42, "Test", 255, 'Z');
+// printf("Empty string: '%s'\n", "");
+// printf("Zero: %d\n", 0);
+// printf("Large int: %d\n", 2147483647);
+// printf("Large unsigned: %u\n", 4294967295U);
+// printf("%s\n", long_string);
+// printf("Nested: %s\n", "Check %x, %d");
+// }
